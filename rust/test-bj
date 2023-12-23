@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+if [ $# -eq 0 ] || ! [[ $1 =~ ^[0-9]+$ ]]; then
+	echo "USAGE: $0 [PROBLEM_NUMBER(only integer)]"
+	exit 1
+fi
+
+file="bj$1"
+cargo test --package "$file"
